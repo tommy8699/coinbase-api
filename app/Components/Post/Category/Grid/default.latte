@@ -1,0 +1,20 @@
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Nazov kategorie</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr n:foreach="$postCategories as $postCategory">
+        <td>
+            <h4>
+                <a href="#"> {$postCategory->name}</a>
+            </h4>
+
+            <span>{$postCategory->description}</span>
+        </td>
+    </tr>
+
+    </tbody>
+</table>

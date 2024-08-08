@@ -1,0 +1,35 @@
+
+{block content}
+
+<div class="container">
+    <div class="row">
+    {foreach $products as $key => $product}
+        <div class="card-group border">
+             <img class="card-img-top" src="img_avatar1.png" alt="Card image">
+            <div class="card-body">
+                <h4 class="card-title">John Doe</h4>
+                <p class="card-text">Some example text.</p>
+                <button class="submitBtn btn btn-primary" data-productId="1">Kúpiť</button>
+                <span n:if="$productId == $key && $warehouseValue != null">{$warehouseValue}</span>
+            </div>
+        </div>
+    {/foreach}
+    </div>
+</div>
+	
+<script>
+    $(".submitBtn").on("click", function() {
+        let prodId = $(this).data("productId");
+        
+        $.nette.ajax({
+            url: {link getWarehouseValue!},
+            method: "POST",
+            data: {
+                "productId" : prodId,
+            }
+        });
+
+    });
+</script>
+
+

@@ -1,0 +1,17 @@
+
+tr th {
+    background: #b5984a;
+    color: #fff;
+    border: none;
+}
+
+a {
+    color: #006aeb;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+td {
+    border-color: #e1d8c1 !important;
+    background: #fff8e5;
+}
