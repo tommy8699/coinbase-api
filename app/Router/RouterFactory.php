@@ -15,6 +15,7 @@ final class RouterFactory
 	{
 		$router = new RouteList;
 		$router->addRoute('get-data-from-czech-register', 'Homepage:getDataFromCzechRegister');
+		$router->addRoute('coin-base', 'Homepage:coinBase');
 		$router->addRoute('<presenter>/<action>[/<id>]', 'Homepage:default');
 		return $router;
 	}
