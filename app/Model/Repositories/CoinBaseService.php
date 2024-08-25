@@ -7,13 +7,24 @@ namespace App\Model\Repositories;
 final class CoinBaseService
 {
     private const BASE_URL = 'https://api.coingecko.com/api/v3/coins/';
+    private const BASE_KEY = 'CG-JPT62xMY5mnu3b3CfuUno9Mx';
 
     public function getCompanyData(string $url)
     {
 
         $url = self::BASE_URL. $url;
+        bdump($url);
 
-        $ch = curl_init($url);
+        $ch = curl_init();
+
+        curl_setopt_array($ch, [
+            CURLOPT_URL => $url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_HTTPHEADER => [
+                "accept: application/json",
+                "x-cg-demo-api-key: ". self::BASE_KEY 
+            ],
+        ]);
 
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
@@ -52,7 +63,7 @@ final class CoinBaseService
     public function getCoinsList()
     {
         try {
-            $url = 'coins/list';
+            $url = '/list';
             $coinsList = $this->getCompanyData($url);
             bdump($coinsList);
             return $coinsList;
@@ -66,7 +77,7 @@ final class CoinBaseService
     public function getCategoriesList()
     {
         try {
-            $url = 'coins/categories/list';
+            $url = '/categories/list';
             $categoriesList = $this->getCompanyData($url);
             return $categoriesList;
         } 
