@@ -1,4 +1,4 @@
-#Spustenie projektu:
+Spustenie projektu:
 
 Nainštalujeme si balíčky pomocou composer z composer.json
 
@@ -6,11 +6,11 @@ Nainštalujeme si balíčky pomocou composer z composer.json
 composer install
 ```
 
-##Pre spustenie projektu je potrebné nastaviť localhost na virtualHost
+Pre spustenie projektu je potrebné nastaviť localhost na virtualHost
 
 V APP/.migrations sú query pre tabuľky
 
-###Príklad XAMPP VirtualHost:
+Príklad XAMPP VirtualHost:
 
 Krok 1) C:\WINDOWS\system32\drivers\etc\ Open the "hosts" file :
 
